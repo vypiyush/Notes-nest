@@ -1,0 +1,8 @@
+Remember to install ejs before starting to use it as --save (i.e. production dependency)
+
+Doesn't use layouts as like pug or handlebars,
+but render Html as it like handlebars (unlike pug)
+
+<%= %> : To Dyanamically assign a value
+<%- %> : To not render it in plain text but in HTML 
+<% %>  : To simply adding javascript logic to the code. (#Closing tags should not be missed)

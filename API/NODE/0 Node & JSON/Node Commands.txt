@@ -1,0 +1,29 @@
+nodejs
+npm init 
+npm init -y --> instantly innitailize without asking for any information
+node install --> if node_modules(dependencies) are not available, install with this command.
+
+
+
+
+
+npm init
+npm install //if we accidently delete aur node modules
+npm install nodemon --global
+npm install nodemon --save-dev
+npm install slugify
+npm install slugify@1.3.5
+node install slugify 
+
+use shortcut as (npm i ______), like
+npm i browserify
+
+SIGN MEANINGS
+(^latest version)(~upgrading version)(>greater version) //NOT VERY IMP
+npm view slugify/browserify/nodeman version
+
+
+Express
+cd .\Express\
+ls
+npm init< entry pont: app.js(its ingeneral trending)
