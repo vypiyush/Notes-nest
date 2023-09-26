@@ -1,0 +1,8 @@
+AWS EFS commands on EC2 Linux instance:
+Change security groups of EC2 Linux instance and add default security group.
+
+1. sudo su -
+2. sudo yum install -y amazon-efs-utils
+3. sudo mkdir efs
+4. click on Attach
+5. run Using the NFS client:

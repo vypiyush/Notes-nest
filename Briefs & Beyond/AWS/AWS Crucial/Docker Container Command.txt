@@ -1,0 +1,44 @@
+AWS Docker - Containers
+SDLC - S/w development life        cycle
+1. Plan
+2. Code
+3. Build
+4. Test
+5. Release
+6. deploy
+7. operate
+Agile
+DevOPS 
+DevOPS tools
+AWS EC2 instance - Amazon Linux
+ - EC2- Elastic compute cloud
+ - Virtual machine - predefined resource alloc
+ - Hardware virtualization
+ - Hypervisor - Vmware, Hyper-V, Oracle V Box
+
+Containers :
+ - OS virtualization
+ - Docker
+ - containers 
+ Container OS image - Dockerhub
+Create Container :
+1. Create EC2 instance - Amazon Linux
+2. Create a Container:
+3. sudo su
+4. yum  install  docker  -y
+5. which docker 
+6. docker -v
+7. service docker start
+8. docker info
+9. docker run -td --name aiml -p 80:80 ubuntu
+10. docker images
+11. docker ps
+12. docker ps  -a
+13. docker exec -it aiml  /bin/bash
+14. apt-get  update  -y
+15. apt-get install apache2 -y
+16. service  apache2  start
+17. cat  /etc/os-release
+18. cd  /var/www/html
+19. echo "I am Container AIML" >index.html
+
