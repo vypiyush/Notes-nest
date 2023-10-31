@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# MongoDB backup directory
+backup_dir="/home/ubuntu/mongodb_backups"
+
+# S3 bucket name
+s3_bucket="ubuntumongosafeauto"
+
+# Timestamp for backup
+timestamp=$(date +"%Y%m%d%H%M%S")
+
+# MongoDB connection details
+mongodb_host="localhost"  # Change to your MongoDB host if it's not on localhost
+mongodb_port="27017"      # Change to your MongoDB port if different
+
+# MongoDB authentication (if needed)
+mongodb_user=""
+mongodb_password=""
+auth_string=""
+if [ -n "$mongodb_user" ] && [ -n "$mongodb_password" ]; then
+    auth_string="--username $mongodb_user --password $mongodb_password"
+fi
+
+# Create a backup
+mongodump --host "$mongodb_host" --port "$mongodb_port" $auth_string --out "$backup_dir/mongodb_backup_$timestamp"
+
+# Compress the backup
+tar -czvf "$backup_dir/mongodb_backup_$timestamp.tar.gz" "$backup_dir/mongodb_backup_$timestamp"
+
+# Upload the backup to S3
+aws s3 cp "$backup_dir/mongodb_backup_$timestamp.tar.gz" "s3://$s3_bucket/mongodb_backups/"
+
+# Clean up
+rm -rf "$backup_dir/mongodb_backup_$timestamp"
+rm "$backup_dir/mongodb_backup_$timestamp.tar.gz"
